@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Linkage Plugin Readme</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+BODY {
+	font-size: 100%;
+}
+
+BODY,TD,TH {
+	font-family: tahoma, verdana, arial, helvetica, sans-serif;
+	font-size: 0.8em;
+}
+
+H2 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+A:hover {
+	text-decoration: none;
+}
+
+H1 {
+	font-family: tahoma, arial, helvetica, sans-serif;
+	font-size: 1.4em;
+	font-weight: bold;
+	border-bottom: 1px #ccc solid;
+	padding-bottom: 2px;
+}
+
+TT {
+	font-family: courier new;
+	font-weight: bold;
+	color: #060;
+}
+
+PRE {
+	font-family: courier new;
+	font-size: 100%;
+}
+P {
+	display:block;
+}
+</style>
+</head>
+<body>
+
+	<h1>Linkage Plugin Readme</h1>
+
+	<h2>简介</h2>
+	<p>
+		这是一个使用jQuery和select2的联动插件。
+	</p>
+
+
+	<h2>使用插件</h2>
+	<p>
+		使用插件前需要先检查:
+		<ol>
+			<li>它需要jQuery;<a href="http://jquery.com/download/">点击下载jQuery</a></li>
+			<li>它需要select2;<a href="https://github.com/select2/select2/releases">点击下载select2</a></li>
+		</ol> 
+	</p>
+	
+	<h2>API</h2>
+	<p>
+		<p>
+			var linkage = $(document).Linkage({ </br>
+				"selectors" : ["#s1", "#s2", "#s3"],</br>
+				"getLinkList" : function(context, selector, param){</br>
+					// return 你的option数据</br>
+				}</br>
+			});</br>
+			<a href="demo/index.html">查看例子</a>
+		</p>
+		<p>
+			Options:<br/>
+			$.fn.Linkage.defaults = {</br>
+				"nvlOpt" : "请选择",// 这是值为空的option显示的文字，你可以修改成其他的文字
+				"selectors" : [], // 需要联动的下拉框选择器</br>
+		        "values" : [], // 下拉框的默认值，需要和选择器顺序一致</br>
+		        "getOption" : Linkage.prototype.getOption, // 制作options的方法，可以覆盖自定义实现</br>
+		        "getLinkList" : Linkage.prototype.getLinkList, // 返回联动的数据方法，必须自定义实现</br>
+			}</br>
+		</p>
+		<p>
+			option shape:<br/>
+			JSON = {"code":"xx","name":"xx"...} // option的数据为JSON格式，其中code和name属性是必填项，如果还有其他的属性，将会被放在option的data扩展中
+		</p>
+		<p>
+			方法:<br/>
+			<table border="1">
+				<thead>
+					<th>方法名称</th>
+					<th>参数</th>
+					<th>描述</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>setSelected</td>
+						<td>selector, val</td>
+						<td>设置对应选择器的值</td>
+					</tr>
+					<tr>
+						<td>getSelected</td>
+						<td>selector</td>
+						<td>取得对应选择器的值</td>
+					</tr>
+					<tr>
+						<td>getValues</td>
+						<td>none</td>
+						<td>取得所有联动选择器的值</td>
+					</tr>
+				</tbody>
+			</table>
+		</p>
+	</p>
+
+	<h2>关于作者</h2>
+	<p>
+		[<a href='http://www.wisea.com'>Author: XuDL</a>] - email:
+			xudl@wisea.com.cn
+	</p>
+
+</body>
+</html>
