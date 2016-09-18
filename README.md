@@ -21,19 +21,14 @@ It needs select2;<a href="https://github.com/select2/select2/releases">Click for
 API
 var linkage = $(document).Linkage({
 
-
 	"selectors" : ["#s1", "#s2"],
 	
 	
 	"getLinkList" : function(context, selector, param){
 	
-	
 		// return your options data
 		
-		
 	}
-	
-	
 });
 
 
